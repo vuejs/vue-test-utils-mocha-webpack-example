@@ -70,4 +70,4 @@ npm run build
 npm test
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, consult the [docs for vue-test-utils](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-mocha-webpack.html).
