@@ -4,6 +4,8 @@ dist/
 npm-debug.log
 yarn-error.log
 .tmp
+.nyc_output
+coverage
 
 # Editor directories and files
 .idea
@@ -11,3 +13,4 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
+*.sw[po]

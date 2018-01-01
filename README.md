@@ -12,19 +12,27 @@ This is based on the `vue-cli` `webpack-simple` template. Test-specific changes 
 - `webpack-node-externals` (for excluding NPM deps from test bundle)
 - `expect` (for assertions)
   - This is the package used internally by Jest, so [usage is the same](http://facebook.github.io/jest/docs/en/expect.html#content). You can also use [chai](http://chaijs.com/) + [sinon](http://sinonjs.org/).
+- `nyc` & `babel-plugin-istanbul` (for coverage)
 
 ### Additional Configuration
 
 #### `package.json`
 
-Added `test` script:
+Added `test` script and setting for `nyc`:
 
 ``` js
 {
   // ...
   "scripts": {
     // ...
-    "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js"
+    "test": "cross-env NODE_ENV=test nyc mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.(js|vue)"
+    ],
+    "instrument": false,
+    "sourceMap": false
   }
 }
 ```
@@ -52,6 +60,21 @@ require('jsdom-global')()
 
 // make expect available globally
 global.expect = require('expect')
+```
+
+#### `.babelrc`
+
+Added `"plugins": ["istanbul"]`:
+
+```js
+{
+  "env": {
+    // ...
+    "test": {
+      "plugins": ["istanbul"]
+    }
+  }
+}
 ```
 
 ## Build Setup
