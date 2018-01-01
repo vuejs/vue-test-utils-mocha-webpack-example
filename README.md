@@ -18,7 +18,7 @@ This is based on the `vue-cli` `webpack-simple` template. Test-specific changes 
 
 #### `package.json`
 
-Added `test` script and setting for nyc:
+Added `test` script and setting for `nyc`:
 
 ``` js
 {
