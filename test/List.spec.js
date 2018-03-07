@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils'
+import { shallow } from '@vue/test-utils'
 import List from '@/components/List.vue'
 
 describe('List.vue', () => {
